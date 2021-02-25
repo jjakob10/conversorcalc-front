@@ -41,8 +41,8 @@ export default function Register() {
 
     try {
       Object.keys(data).forEach((item) => {
-        if (data[item] === 0 || data[item] === null) {
-          throw "Preencha corretamente todos os campos com números diferentes de '0'";
+        if (data[item] <= 0 || data[item] === null) {
+          throw "Preencha corretamente todos os campos com números maiores que '0'";
         }
       });
       try {
