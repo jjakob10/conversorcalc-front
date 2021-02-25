@@ -1,0 +1,105 @@
+.register-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container .content {
+  width: 100%;
+  padding: 60px;
+  /* background: #f0f0f5; */
+  background: #0Fa9a0;
+  box-shadow: 0 0 100px rgba(0,0,0,0.1);
+  border-radius: 8px; 
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-container .content section{
+  width: 100%;
+  max-width: 380px;
+}
+
+.register-container .content section h1{
+  margin: 0px 0 16px;
+  font-size: 32px;
+}
+
+.register-container .content section p{
+  font-size: 18px;
+  /* color: #737380; */
+  color: #f0f0f5;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+.register-container .content section h2{
+  font-size: 18px;
+  /* color: #737380; */
+  color: #f0f0f5;
+  margin-top: 5px;
+  font-weight: normal;
+}
+.register-container .content section b{
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.register-container .content section div{
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.register-container .content form{
+  width: 100%;
+  max-width: 450px;
+}
+
+.register-container .content form label{
+  font-size: 18px;
+  font-weight: bold;
+  color: #030300;
+  /* color: #f0f0f5; */
+  line-height: 16px;
+  margin-bottom: 16px; 
+}
+.custom-select {
+  
+  position: relative;
+  font-family: Arial;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.custom-select select {
+  font-size: 18px;
+}
+
+.custom-select select option {
+  font-size: 18px;
+}
+
+.register-container .content input{
+  margin-top: 8px;
+}
+
+.register-container .content form .input-group{
+  display: flex;
+}
+
+.register-container .content form .input-group input + input{
+  margin-left: 8px;
+}
+
+.register-container .content form p{
+  font-size: 18px;
+  /* color: #737380; */
+  color: #f0f0f5;
+  line-height: 16px;
+  margin-bottom: 16px;
+}
