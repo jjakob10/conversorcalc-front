@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 
-import api from "../../services/api";
+import buckboost from "../../util/localBuckBoost";
 import "./styles.css";
 
 export default function Register() {
@@ -46,19 +46,10 @@ export default function Register() {
         }
       });
       try {
-        const response = await api.post("buck", data);
+        const response = buckboost(data);
 
-        const {
-          dutyCicle,
-          comCo,
-          comCe,
-          Lo,
-          Co,
-          Le,
-          Ce,
-          resFreq,
-          type,
-        } = response.data;
+        const { dutyCicle, comCo, comCe, Lo, Co, Le, Ce, resFreq, type } =
+          response;
         setDutyCicle(dutyCicle);
         setLo(Lo);
         setCo(Co);

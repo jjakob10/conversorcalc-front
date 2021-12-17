@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
-import api from "../../services/api";
+import inductorCalc from "../../util/localInductor";
 import "./styles.css";
 
 export default function Register() {
@@ -41,13 +41,15 @@ export default function Register() {
     try {
       Object.keys(data).forEach((item) => {
         if ((data[item] === 0 || data[item] === null) && item !== "ray2") {
-          throw "Preencha corretamente todos os campos com números diferentes de '0'";
+          throw new Error(
+            "Preencha corretamente todos os campos com números diferentes de '0'"
+          );
         }
       });
       try {
-        const response = await api.post("inductor", data);
+        const response = inductorCalc(data);
 
-        const { N } = response.data;
+        const { N } = response;
         setN(N);
       } catch (err) {
         alert("Erro de comunicação");
@@ -77,7 +79,7 @@ export default function Register() {
         <form onSubmit={handleRegister}>
           <label>
             Escolha o tipo de indutor:
-            <div class="custom-select" style={{ width: "200px" }}>
+            <div className="custom-select" style={{ width: "200px" }}>
               <select value={type} onChange={handleChange}>
                 <option value="toroid">Toroidal</option>
                 <option value="cilinder">Cilindrico</option>
